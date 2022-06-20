@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackOfficeXchange xsi:schemaLocation="urn:intercope:box:implintf:xsd:$implintf file:///H:\Testautomation\XSD-Files\Box44\BackOfficeXchange.xsd"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="urn:intercope:box:implintf:xsd:$implintf"
+                   xmlns:bmi="urn:intercope:box:miintf:xsd:$miintf"
+                   xmlns:mpo="http://www.intercope.com/MPO-namespace">
+	<BOX-Submission>
+		<SubmissionProfileName>OCT71</SubmissionProfileName>
+		<DomainModule>_RTGS</DomainModule>
+		<Message>
+			<Submission-Parameter>
+				<SWIFT-IACT-Parameter>
+					<bmi:RequestHeaderData>
+						<bmi:Requestor>cn=esmig,o=deutdeff,o=swift</bmi:Requestor>
+						<bmi:Responder>ou=profile03,ou=esmig,o=cobadeff,o=swift</bmi:Responder>
+						<bmi:Service>esmig.t2.iast!sim</bmi:Service>
+						<bmi:RequestType>pacs.008.001.08</bmi:RequestType>
+					</bmi:RequestHeaderData>
+				</SWIFT-IACT-Parameter>
+			</Submission-Parameter>
+			<Payload>
+				<AppHdr xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:head.001.001.01 file:///H:\Testautomation\XSD-Files\MX-Head.001.001.01.xsd"
+				        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				        xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.01">
+					<Fr><FIId><FinInstnId><BICFI>DEUTDEFFXXX</BICFI></FinInstnId></FIId></Fr>
+					<To><FIId><FinInstnId><BICFI>COBADEFFXXX</BICFI></FinInstnId></FIId></To>
+					<BizMsgIdr>BMI-MXT2-6938-1-20220530111601</BizMsgIdr>
+					<MsgDefIdr>pacs.008.001.08</MsgDefIdr>
+					<CreDt>2022-05-30T11:16:01Z</CreDt>
+				</AppHdr>
+				<Document xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08 file:///H:\Testautomation\XSD-Files\MXT2-pacs.008.001.08.xsd"
+				          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				          xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+					<FIToFICstmrCdtTrf>
+						<GrpHdr>
+							<MsgId>NONREF</MsgId>
+							<CreDtTm>2022-05-30T11:16:01+01:00</CreDtTm>
+							<NbOfTxs>1</NbOfTxs>
+							<SttlmInf>
+								<SttlmMtd>CLRG</SttlmMtd>
+								<ClrSys><Cd>TGT</Cd></ClrSys>
+							</SttlmInf>
+						</GrpHdr>
+						<CdtTrfTxInf>
+							<PmtId>
+								<InstrId>0530111601-6938</InstrId>
+								<EndToEndId>E2E-6938-2022053011160101</EndToEndId>
+								<UETR>69380000-1234-4321-abcd-111601abcdef</UETR>
+								<ClrSysRef>ClrSysRef-6938-2022053011160101</ClrSysRef>
+							</PmtId>
+							<IntrBkSttlmAmt Ccy="EUR">6938</IntrBkSttlmAmt>
+							<IntrBkSttlmDt>2022-05-30</IntrBkSttlmDt>
+							<InstdAmt Ccy="EUR">6938</InstdAmt>
+							<ChrgBr>SHAR</ChrgBr>
+							<InstgAgt><FinInstnId><BICFI>DEUTDEFFXXX</BICFI></FinInstnId></InstgAgt>
+							<InstdAgt><FinInstnId><BICFI>COBADEFFXXX</BICFI></FinInstnId></InstdAgt>
+							<Dbtr>
+								<Nm>DEUTSCHE RENTENVERSICHERUNG BUND</Nm>
+								<PstlAdr>
+									<AdrLine>RUHRSTRASSE 2</AdrLine>
+									<AdrLine>10709 BERLIN</AdrLine>
+								</PstlAdr>
+							</Dbtr>
+							<DbtrAcct><Id><IBAN>DE06100700000017845900</IBAN></Id></DbtrAcct>
+							<DbtrAgt><FinInstnId><BICFI>DEUTDEFFXXX</BICFI></FinInstnId></DbtrAgt>
+							<CdtrAgt><FinInstnId><BICFI>COBADEFFXXX</BICFI></FinInstnId></CdtrAgt>
+							<Cdtr>
+								<Nm>Barmag Aktiengesellschaft</Nm>
+								<PstlAdr>
+									<AdrLine>Leverkuser Str. 65</AdrLine>
+									<AdrLine>42897 Remscheid</AdrLine>
+								</PstlAdr>
+							</Cdtr>
+							<CdtrAcct><Id><IBAN>DE68340400490763530300</IBAN></Id></CdtrAcct>
+							<RmtInf><Ustrd>Verwendungszweck Test Recall</Ustrd></RmtInf>
+						</CdtTrfTxInf>
+					</FIToFICstmrCdtTrf>
+				</Document>
+			</Payload>
+		</Message>
+	</BOX-Submission>
+	<Enrichment><ApplicationData><mpo:MiniApplicationData2>IAct</mpo:MiniApplicationData2></ApplicationData></Enrichment>
+</BackOfficeXchange>
